@@ -1,0 +1,101 @@
+.grid {
+  width: 440px;
+  height: 440px;
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  background-color: black;
+  border: 5px solid darkslategrey;
+}
+
+.grid div {
+  width: 100px;
+  height: 100px;
+  /* background-color: green; */
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  border: 5px solid darkslategrey;
+  color: rgb(177, 21, 21);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100px;
+}
+
+/*
+https://learnui.design/tools/data-color-picker.html#palette
+ 2: #e4ff78
+ 4: #edcd52
+ 8: #e99b44
+ 16: #d76c45
+ 32:#b8424a
+ 64: #8e1e4d
+ 128: #5c0649
+ 256: #6b0332
+ 512: #6e181d
+ 1028: #5b3c00
+ 2048: #4b4904
+4096: #37541b
+8192:#1a5c35
+16384: #51421a
+ */
+
+.tile2 {
+  background-color: #e4ff78;
+}
+
+.tile4 {
+  background-color: #edcd52;
+}
+
+.tile8 {
+  background-color: #e99b44;
+}
+
+.tile16 {
+  background-color: #d76c45;
+}
+
+.tile32 {
+  background-color: #b8424a;
+}
+
+.tile64 {
+  background-color: #8e1e4d;
+}
+
+.tile128 {
+  background-color: #5c0649;
+}
+
+.tile256 {
+  background-color: #6b0332;
+}
+
+.tile512 {
+  background-color: #6e181d;
+}
+
+.tile1024 {
+  background-color: #5b3c00;
+}
+
+.tile2048 {
+  background-color: #4b4904;
+}
+
+.tile4096 {
+  background-color: #37541b;
+}
+
+.tile8192 {
+  background-color: #1a5c35;
+}
+
+.tile16384 {
+  background-color: #51421a;
+}
