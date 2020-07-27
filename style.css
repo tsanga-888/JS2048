@@ -42,6 +42,8 @@ https://learnui.design/tools/data-color-picker.html#palette
 4096: #37541b
 8192:#1a5c35
 16384: #51421a
+32768: #423102
+65536:#2e2201
  */
 
 .tile2 {
@@ -98,4 +100,12 @@ https://learnui.design/tools/data-color-picker.html#palette
 
 .tile16384 {
   background-color: #51421a;
+}
+
+.tile32768 {
+  background-color: #423102;
+}
+
+.tile65536 {
+  background-color: #2e2201;
 }
