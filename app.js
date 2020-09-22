@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const squares = document.querySelectorAll(".grid div");
+  const grid = document.querySelector(".grid");
   const scoreDisplay = document.querySelector(".score");
   const infoDisplay = document.querySelector(".info");
   const startButton = document.querySelector(".start");
@@ -18,6 +19,77 @@ document.addEventListener("DOMContentLoaded", () => {
     [0, 0, 0, 0],
     [0, 0, 0, 0],
   ];
+
+  grid.addEventListener("mousedown", mousedownHandler);
+  grid.addEventListener("mouseup", mouseupHandler);
+  grid.addEventListener("mousemove", mousemoveHandler);
+
+  var mouseStartX = 0;
+  var mouseStartY = 0;
+  var mouseFinishX = 0;
+  var mouseFinishY = 0;
+  var xThreshold = 50;
+  var yThreshold = 50;
+
+  function mousedownHandler(e) {
+    // playerX = e.clientX - gameCanvas.offsetLeft - playerWidth / 2;
+    // playerY = e.clientY - gameCanvas.offsetTop - playerHeight / 2;
+    // playerX = e.clientX;
+    // playerY = e.clientY;
+    // mouseMove = true;
+    mouseStartX = e.clientX;
+    mouseStartY = e.clientY;
+    // outputDisplay.innerHTML = "Down: " + " x: " + playerX + ", y: " + playerY;
+    e.preventDefault();
+  }
+  function mouseupHandler(e) {
+    // playerX = e.clientX - gameCanvas.offsetLeft - playerWidth / 2;
+    // playerY = e.clientY - gameCanvas.offsetTop - playerHeight / 2;
+    // playerX = e.clientX;
+    // playerY = e.clientY;
+    mouseFinishX = e.clientX;
+    mouseFinishY = e.clientY;
+    // mouseMove = false;
+    // outputDisplay.innerHTML =
+    // "mouseup: " + " x: " + playerX + ", y: " + playerY;
+    interpretMouseDragAction();
+    e.preventDefault();
+  }
+
+  function mousemoveHandler(e) {
+    //outputDisplay.innerHTML += "*";
+    e.preventDefault();
+  }
+
+  function interpretMouseDragAction() {
+    var deltaX = mouseFinishX - mouseStartX;
+    var deltaY = mouseFinishY - mouseStartY;
+
+    //Understand users action
+    // outputDisplay.innerHTML += " deltaX: " + deltaX + " deltaY: " + deltaY;
+
+    // only left, right, up, and down actions
+    if (gameOver) return;
+    if (Math.abs(deltaX) > xThreshold && Math.abs(deltaY) <= yThreshold) {
+      if (deltaX >= 0) {
+        //infoDisplay.innerHTML += " Move Right";
+        performMove("RIGHT");
+      } else if (deltaX < 0) {
+        //infoDisplay.innerHTML += " Move Left";
+        performMove("LEFT");
+      }
+    }
+
+    if (Math.abs(deltaY) > yThreshold && Math.abs(deltaX) <= xThreshold) {
+      if (deltaY >= 0) {
+        //infoDisplay.innerHTML += " Move Down";
+        performMove("DOWN");
+      } else if (deltaY < 0) {
+        //infoDisplay.innerHTML += " Move Up";
+        performMove("UP");
+      }
+    }
+  }
 
   // const directions = {
   //      RIGHT: 39,
